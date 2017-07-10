@@ -1,0 +1,14 @@
+<h1>New Post</h1>
+<hr>
+
+<%= form_for @post, html: { multipart: true } do |form| %>
+  <%= form_for @post do |f| %>
+    <br>
+    <%= form.file_field :image %>
+    <%= image_tag @post.image.url(:medium) %>
+    <%= f.label :description %>
+    <%= f.text_area :description %>
+    <br>
+    <%= f.submit %>
+  <% end %>
+<% end %>
